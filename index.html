@@ -432,49 +432,57 @@ Scan before passing to the rebounder — decide which option you're going to bef
   <div class="block">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
-      <div class="block-info"><div class="block-name">Block C — Finishing</div><div class="block-tag">Far post arrival · chaos finishing · predator instinct</div></div>
+      <div class="block-info"><div class="block-name">Block C — Turn and Finish</div><div class="block-tag">Turn creates the space · finish is the payoff</div></div>
       <div class="block-dur">10min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Far Post Arrival</div><div class="drill-time">5 min</div></div>
-        <div class="drill-desc">The angled rebounder simulates the cross. Start from an intermediate position, hold your run, and arrive at the far post just as the ball arrives. The goal is timing — arrive with the ball, not before it.</div>
-        <div class="drill-setup"><strong>Setup:</strong> Angled rebounder simulating a wide delivery. Goal target 6-8m away.</div>
+        <div class="drill-row"><div class="drill-name">Turn and Finish — Four Exits</div><div class="drill-time">7 min</div></div>
+        <div class="drill-desc">The direct continuation of Block A. Same back-to-goal setup — rebounder in front, defender cone behind — but now every turn ends with a finish on goal instead of just arriving at the target cone. The turn IS the move that creates the yard of space. The finish is what you do with it.<br><br>
+Rotate through the same four exits as Block A, spending roughly 90 seconds on each:<br>
+<strong>Drag back and turn</strong> — drive to the target cone, finish.<br>
+<strong>Fake and roll</strong> — roll out, finish off the strong foot.<br>
+<strong>Outside hook</strong> — hook wide, finish in one flowing motion.<br>
+<strong>Spin</strong> — spin around defender, finish before they recover.<br><br>
+The target cone from Block A becomes the shooting position. Aim for a corner every time — not at the keeper, not vaguely at goal.</div>
+        <div class="drill-setup"><strong>Setup:</strong> Same as Block A. Rebounder in front, defender cone 1-2m behind, goal or target 5-8m ahead. The turn exits toward the shooting position.</div>
         <div class="diagram">
-          <svg viewBox="0 0 280 190" style="max-width:280px;width:100%">
+          <svg viewBox="0 0 260 220" style="max-width:260px;width:100%">
             <defs>
-              <marker id="fp1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
-              <marker id="fp2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+              <marker id="tf1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+              <marker id="tf2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="tf3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
             </defs>
-            <rect x="218" y="60" width="12" height="70" fill="none" stroke="#1C2B4A" stroke-width="2"/>
-            <rect x="218" y="60" width="30" height="70" fill="none" stroke="#1C2B4A" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
-            <text x="252" y="100" font-size="8" fill="#1C2B4A" font-family="sans-serif">GOAL</text>
-            <rect x="20" y="145" width="34" height="18" rx="3" fill="#1C2B4A" opacity="0.75" transform="rotate(-20,37,154)"/>
-            <text x="34" y="170" text-anchor="middle" font-size="8" fill="#1C2B4A" font-family="sans-serif">RBD (wide)</text>
-            <circle cx="100" cy="140" r="10" fill="#2E8FD4" opacity="0.3" stroke="#2E8FD4" stroke-width="1.5"/>
-            <text x="100" y="144" text-anchor="middle" font-size="8" fill="#2E8FD4" font-family="sans-serif">P</text>
-            <text x="100" y="156" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">hold...</text>
-            <path d="M 42 148 Q 120 60 215 90" fill="none" stroke="#1C2B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#fp2)"/>
-            <text x="100" y="75" font-size="8" fill="#1C2B4A" font-family="sans-serif" transform="rotate(-20,100,75)">cross</text>
-            <path d="M 108 132 Q 155 100 215 93" fill="none" stroke="#D4561A" stroke-width="2" marker-end="url(#fp1)"/>
-            <text x="155" y="108" font-size="8" fill="#D4561A" font-family="sans-serif">late arrival →</text>
-            <text x="218" y="56" font-size="8" fill="#1E7A3C" font-family="sans-serif">far post</text>
+            <!-- RBD top -->
+            <rect x="115" y="10" width="30" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="23" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">RBD</text>
+            <!-- Ball from RBD -->
+            <line x1="130" y1="28" x2="130" y2="78" stroke="#1C2B4A" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#tf1)"/>
+            <!-- Player -->
+            <circle cx="130" cy="92" r="12" fill="#2E8FD4"/>
+            <text x="130" y="96" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">P</text>
+            <!-- DEF cone -->
+            <polygon points="130,122 137,136 123,136" fill="#D4561A" opacity="0.8"/>
+            <text x="152" y="133" font-size="8" fill="#D4561A" font-family="sans-serif">DEF cone</text>
+            <!-- Turn paths -->
+            <path d="M 120 100 Q 65 148 118 178" fill="none" stroke="#D4561A" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#tf2)"/>
+            <path d="M 140 100 Q 195 148 142 178" fill="none" stroke="#D4561A" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#tf2)"/>
+            <!-- Goal at bottom -->
+            <rect x="100" y="185" width="60" height="14" fill="none" stroke="#1E7A3C" stroke-width="1.5"/>
+            <text x="130" y="210" text-anchor="middle" font-size="9" fill="#1E7A3C" font-family="sans-serif">GOAL → pick a corner</text>
           </svg>
           <div class="diag-legend">
-            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1C2B4A"></div>cross (rebounder)</div>
-            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>player run — arrive late</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1C2B4A"></div>ball from RBD</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>turn exits (×4)</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>finish on goal</div>
           </div>
         </div>
-        <div class="cues"><span class="cue">Hold the run</span><span class="cue">Arrive late</span><span class="cue">Eyes to goal early</span></div>
+        <div class="cues"><span class="cue">Turn and shoot in one motion</span><span class="cue">Pick a corner before turning</span><span class="cue">No extra touch to set up</span><span class="cue orange">The turn creates the space — use it immediately</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Chaos Finishing — Second Balls</div><div class="drill-time">5 min</div></div>
-        <div class="drill-desc">Send the ball to the angled rebounder so it bounces unpredictably. <strong>Six-yard box rule: zero setup, predator brain on, step forward.</strong> Ball arrives, it goes toward goal by whatever means necessary. Chest, shin, knee, wrong foot — doesn't matter.</div>
-        <div class="cues"><span class="cue">Step forward, not back</span><span class="cue">Any part of the body</span><span class="cue">Always at goal</span><span class="cue orange">Zero hesitation</span></div>
-      </div>
-      <div class="finishing-standard">
-        <div class="finishing-standard-tag">Weekly Finishing Standard</div>
-        <div class="finishing-standard-text">Target across all finishing work this week: <strong>25–40 shots total</strong>. At least <strong>50% from imperfect situations</strong> — rebounds, off-balance, wrong foot, moving balls. At least <strong>10 weak-foot finishes</strong>. Stop when decision speed drops.</div>
+        <div class="drill-row"><div class="drill-name">Receive, Turn, Finish — Flowing Sequence</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">No defender cone. Just you and the rebounder. Receive half-turned, turn in any direction that feels right, finish. Faster tempo, less structured — let the turn and finish start to feel natural rather than deliberate. This is where Block A and Block C start to become one movement.</div>
+        <div class="cues"><span class="cue">Fast tempo</span><span class="cue">Any turn, any direction</span><span class="cue">Always finish</span></div>
       </div>
     </div>
   </div>
