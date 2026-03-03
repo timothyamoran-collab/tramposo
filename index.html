@@ -65,7 +65,7 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 /* WEEK GRID */
 .week-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--ink);margin-bottom:4px}
 .week-subtitle{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:14px}
-.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:14px}
+.week-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-bottom:14px}
 .day-chip{background:var(--card);border:2px solid var(--border);border-radius:6px;padding:10px 4px;text-align:center;cursor:pointer;transition:all .15s;box-shadow:0 1px 3px rgba(28,43,74,.06)}
 .day-chip.active{background:var(--sky);border-color:var(--sky);box-shadow:0 3px 10px rgba(46,143,212,.3)}
 .day-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--ink)}
@@ -228,12 +228,13 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 <div class="week-subtitle">Tap each day to see the session</div>
 <div class="week-grid">
   <div class="day-chip active" onclick="showSession('mon')"><div class="day-name">MON</div><div class="day-type">CEFA</div><div class="day-dur">2×1h</div><div class="day-dot dot-sky"></div></div>
-  <div class="day-chip" onclick="showSession('tue')"><div class="day-name">TUE</div><div class="day-type">2nd Striker</div><div class="day-dur">45min</div><div class="day-dot dot-green"></div></div>
-  <div class="day-chip" onclick="showSession('wed')"><div class="day-name">WED</div><div class="day-type">Press+Link</div><div class="day-dur">30min</div><div class="day-dot dot-orange"></div></div>
+  <div class="day-chip" onclick="showSession('tue')"><div class="day-name">TUE</div><div class="day-type">2nd Striker</div><div class="day-dur">60min</div><div class="day-dot dot-green"></div></div>
+  <div class="day-chip" onclick="showSession('wed')"><div class="day-name">WED</div><div class="day-type">Press+Link</div><div class="day-dur">40min</div><div class="day-dot dot-orange"></div></div>
   <div class="day-chip" onclick="showSession('thu')"><div class="day-name">THU</div><div class="day-type">CEFA+8v8</div><div class="day-dur">2×1h+</div><div class="day-dot dot-sky"></div></div>
-  <div class="day-chip" onclick="showSession('fri')"><div class="day-name">FRI</div><div class="day-type">Recovery</div><div class="day-dur">20min</div><div class="day-dot dot-muted"></div></div>
+  <div class="day-chip" onclick="showSession('fri')"><div class="day-name">FRI</div><div class="day-type">Recovery</div><div class="day-dur">25min</div><div class="day-dot dot-muted"></div></div>
   <div class="day-chip" onclick="showSession('sat')"><div class="day-name">SAT</div><div class="day-type">1st Striker</div><div class="day-dur">60min</div><div class="day-dot dot-orange"></div></div>
-  <div class="day-chip" onclick="showSession('sun')"><div class="day-name">SUN</div><div class="day-type">Finishing</div><div class="day-dur">40min</div><div class="day-dot dot-muted"></div></div>
+  <div class="day-chip" onclick="showSession('sun')"><div class="day-name">SUN</div><div class="day-type">Finishing</div><div class="day-dur">60min</div><div class="day-dot dot-muted"></div></div>
+  <div class="day-chip" onclick="showSession('extra')" style="border-color:var(--yellow)"><div class="day-name" style="font-size:13px">EXTRA</div><div class="day-type">Link Play</div><div class="day-dur">Library</div><div class="day-dot" style="background:var(--yellow)"></div></div>
 </div>
 
 <div class="sessions-nav">
@@ -244,6 +245,7 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
   <div class="snav-btn" onclick="showSession('fri')">Fri — Recovery</div>
   <div class="snav-btn" onclick="showSession('sat')">Sat — 1st Striker</div>
   <div class="snav-btn" onclick="showSession('sun')">Sun — Finishing</div>
+  <div class="snav-btn" onclick="showSession('extra')" style="border-color:var(--yellow);color:var(--ink2)">+ Extra Work</div>
 </div>
 
 <!-- ── MONDAY ── -->
@@ -278,7 +280,7 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 <div class="session-panel" id="sess-tue">
   <div class="session-head">
     <div><div class="session-title">Tuesday — Second Striker Day</div><div class="session-focus">Link play · dropping · body shape · decision before touch</div></div>
-    <div class="session-meta"><div class="session-time">45min</div><div class="session-location">La Gloria · Warehouse</div></div>
+    <div class="session-meta"><div class="session-time">60min</div><div class="session-location">La Gloria · Warehouse</div></div>
   </div>
   <div class="session-note">Tuesday is your second striker day. The entire session is built around one concrete situation: you drop in front of the CB, receive from a midfielder, and have three options — bounce back, lay off wide, or turn and filter for the striker. Block A drills the technical fundamentals. Block B applies them to real decisions. Block C finishes.</div>
 
@@ -286,19 +288,29 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
   <div class="block open">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
-      <div class="block-info"><div class="block-name">Activation — Rebounder + Mobility</div><div class="block-tag">Warm-up with intention · not mechanical</div></div>
-      <div class="block-dur">8min</div><div class="block-chevron">▼</div>
+      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">Agility · rebounder · dynamic mobility · stretch</div></div>
+      <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Rebounder Passing — Both Feet</div><div class="drill-time">4 min</div></div>
-        <div class="drill-desc">Floor-level rebounder, 3-4m distance. Simple passes alternating feet. Every reception, a shoulder check first. From week 3 onwards: call out loud "turn", "set", or "bounce" BEFORE the ball arrives — then execute that immediately.</div>
-        <div class="cues"><span class="cue">Shoulder check every reception</span><span class="cue">Both feet</span><span class="cue">Call it before it arrives (wk 3+)</span></div>
+        <div class="drill-row"><div class="drill-name">Agility Ladder</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Two feet in each rung, in-in-out-out, lateral shuffle. Three passes through, alternating patterns. Not speed work — footwork and coordination. Gets the feet and nervous system awake before anything else.</div>
+        <div class="cues"><span class="cue">Light on the feet</span><span class="cue">Tall posture</span><span class="cue">Arms moving</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">4 min</div></div>
-        <div class="drill-desc">Leg swings, hip circles, high knees, heel-to-glutes, lateral shuffles. Focus on hips and adductors.</div>
-        <div class="cues"><span class="cue">Hips</span><span class="cue">Full ROM</span><span class="cue">Not rushed</span></div>
+        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Floor-level rebounder, 3-4m distance. Simple passes alternating feet. Shoulder check every reception. From week 3 onwards: call out loud "turn", "set", or "bounce" before the ball arrives — then execute immediately.</div>
+        <div class="cues"><span class="cue">Shoulder check every rep</span><span class="cue">Both feet</span><span class="cue">Call it before it arrives (wk 3+)</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Moving, not static. Leg swings forward and back, leg swings lateral, hip circles, high knees, heel-to-glutes, lateral shuffle. Hips and adductors — everything that needs to be open before the session starts.</div>
+        <div class="cues"><span class="cue">Full range of motion</span><span class="cue">Hips</span><span class="cue">Not rushed</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Juggling</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Both feet, thighs, chest — free. No target, no pressure. Ends the activation with soft touch and feel. The session starts properly after this.</div>
+        <div class="cues"><span class="cue muted">No obligation</span><span class="cue">Both feet</span></div>
       </div>
     </div>
   </div>
@@ -323,8 +335,9 @@ body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font
 <strong>(1) Drag back and turn</strong> — drag the ball back with the sole, pivot, accelerate to target.<br>
 <strong>(2) Fake one way, roll the other</strong> — shoulder drop one direction, roll the ball the opposite way with the outside of the foot.<br>
 <strong>(3) Outside hook</strong> — receive and hook the ball wide with the outside of the foot in one motion, body already turning.<br>
-<strong>(4) Spin</strong> — shoulder check first, sell a dummy one way, spin the other side of the defender.</div>
-        <div class="drill-setup"><strong>Setup:</strong> Rebounder in front. Cone 1-2m behind you (defender). Target cone 5m ahead of you (toward goal). Every turn exits toward the target.</div>
+<strong>(4) Spin</strong> — shoulder check first, sell a dummy one way, spin the other side of the defender.<br><br>
+<strong>After the turn — one amague before the target.</strong> Don't go straight to the target cone. The turn gets you the space; the amague beats the second defender. Keep it simple: pie a pie (small side-to-side feint at pace) or a shoulder drop. One move, then accelerate. This stops the drill becoming robotic and trains the full sequence — receive, turn, beat, release.</div>
+        <div class="drill-setup"><strong>Setup:</strong> Rebounder in front. Cone 1-2m behind you (defender). Target cone 5m ahead (toward goal). Every turn exits toward the target — with one amague before arriving.</div>
         <div class="diagram">
           <svg viewBox="0 0 260 250" style="max-width:260px;width:100%">
             <defs>
@@ -440,11 +453,11 @@ Scan before passing to the rebounder — decide which option you're going to bef
         <div class="drill-row"><div class="drill-name">Turn and Finish — Four Exits</div><div class="drill-time">7 min</div></div>
         <div class="drill-desc">The direct continuation of Block A. Same back-to-goal setup — rebounder in front, defender cone behind — but now every turn ends with a finish on goal instead of just arriving at the target cone. The turn IS the move that creates the yard of space. The finish is what you do with it.<br><br>
 Rotate through the same four exits as Block A, spending roughly 90 seconds on each:<br>
-<strong>Drag back and turn</strong> — drive to the target cone, finish.<br>
-<strong>Fake and roll</strong> — roll out, finish off the strong foot.<br>
-<strong>Outside hook</strong> — hook wide, finish in one flowing motion.<br>
-<strong>Spin</strong> — spin around defender, finish before they recover.<br><br>
-The target cone from Block A becomes the shooting position. Aim for a corner every time — not at the keeper, not vaguely at goal.</div>
+<strong>Drag back and turn</strong> — turn, one amague, finish.<br>
+<strong>Fake and roll</strong> — roll out, one amague, finish off the strong foot.<br>
+<strong>Outside hook</strong> — hook wide, one amague, finish in one flowing motion.<br>
+<strong>Spin</strong> — spin around defender, one amague, finish before they recover.<br><br>
+The amague is the same as Block A — pie a pie or shoulder drop, one move only. The sequence is: turn creates the space → amague beats the second defender → finish. Aim for a corner every time — not at the keeper, not vaguely at goal.</div>
         <div class="drill-setup"><strong>Setup:</strong> Same as Block A. Rebounder in front, defender cone 1-2m behind, goal or target 5-8m ahead. The turn exits toward the shooting position.</div>
         <div class="diagram">
           <svg viewBox="0 0 260 220" style="max-width:260px;width:100%">
@@ -508,21 +521,36 @@ The target cone from Block A becomes the shooting position. Aim for a corner eve
 <div class="session-panel" id="sess-wed">
   <div class="session-head">
     <div><div class="session-title">Wednesday — Pressing + Link Play Complexity</div><div class="session-focus">Mandatory pressing · link play under harder constraints</div></div>
-    <div class="session-meta"><div class="session-time">30min</div><div class="session-location">La Gloria · Warehouse or Pitch</div></div>
+    <div class="session-meta"><div class="session-time">40min</div><div class="session-location">La Gloria · Warehouse or Pitch</div></div>
   </div>
-  <div class="session-note">Wednesday is not open-ended. The pressing block happens every week without exception — it's how the curved run becomes automatic. The link play block is the same situations as Tuesday but harder: weaker foot, one touch maximum, faster tempo. Tuesday builds it. Wednesday stress-tests it.</div>
+  <div class="session-note">Pressing first, every week. Then the same link play situations as Tuesday — but harder constraints, faster tempo.</div>
 
   <div class="block open">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
-      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">4 minutes · rebounder only</div></div>
-      <div class="block-dur">4min</div><div class="block-chevron">▼</div>
+      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">Agility · rebounder · dynamic mobility · juggling</div></div>
+      <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">4 min</div></div>
-        <div class="drill-desc">Short and sharp. Both feet, shoulder check every reception. Wednesday's activation is shorter than other days — the pressing block does the rest of the warm-up naturally.</div>
-        <div class="cues"><span class="cue">Shoulder check every reception</span><span class="cue">Both feet</span></div>
+        <div class="drill-row"><div class="drill-name">Agility Ladder</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Two feet in each rung, in-in-out-out, lateral shuffle. Three passes through, alternating patterns. Footwork and coordination — gets the feet awake before the pressing block.</div>
+        <div class="cues"><span class="cue">Light on the feet</span><span class="cue">Tall posture</span><span class="cue">Arms moving</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Floor-level rebounder, 3-4m. Both feet, shoulder check every reception.</div>
+        <div class="cues"><span class="cue">Shoulder check every rep</span><span class="cue">Both feet</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Leg swings forward and back, lateral, hip circles, high knees, heel-to-glutes, lateral shuffle. Hips and adductors open before the pressing sprints.</div>
+        <div class="cues"><span class="cue">Full range of motion</span><span class="cue">Hips</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Juggling</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Both feet, thighs, chest — free. Ends the activation with soft touch before the pressing block begins.</div>
+        <div class="cues"><span class="cue muted">No obligation</span><span class="cue">Both feet</span></div>
       </div>
     </div>
   </div>
@@ -530,7 +558,7 @@ The target cone from Block A becomes the shooting position. Aim for a corner eve
   <div class="block">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--orange)"></div>
-      <div class="block-info"><div class="block-name">Pressing Block — Mandatory</div><div class="block-tag">Every week · no exceptions · curved sprint + variations</div></div>
+      <div class="block-info"><div class="block-name">Pressing Block</div><div class="block-tag">Curved sprint · variations</div></div>
       <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
@@ -542,6 +570,40 @@ The target cone from Block A becomes the shooting position. Aim for a corner eve
 <strong>Weeks 5-6:</strong> 8 reps.<br>
 <strong>Phase 3:</strong> Two sets of 6 with 90 seconds between sets.</div>
         <div class="drill-setup"><strong>Setup:</strong> Central cone (defender) 8-10m ahead. Wide cone (fullback) 3-4m to the side. Your curved run passes between both before arriving at central.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 260 200" style="max-width:260px;width:100%">
+            <defs>
+              <marker id="wed-cp1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="wed-cp2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#8A9AAE"/></marker>
+            </defs>
+            <!-- Player start -->
+            <circle cx="60" cy="165" r="10" fill="#2E8FD4" opacity="0.35" stroke="#2E8FD4" stroke-width="1.5"/>
+            <text x="60" y="169" text-anchor="middle" font-size="8" fill="#2E8FD4" font-family="sans-serif">P</text>
+            <text x="60" y="182" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">start</text>
+            <!-- DEF cone -->
+            <polygon points="130,55 138,72 122,72" fill="#1C2B4A"/>
+            <text x="130" y="86" text-anchor="middle" font-size="8" fill="#1C2B4A" font-family="sans-serif">DEF</text>
+            <text x="130" y="96" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">8-10m</text>
+            <!-- FB cone -->
+            <polygon points="215,52 223,68 207,68" fill="#8A9AAE"/>
+            <text x="215" y="82" text-anchor="middle" font-size="8" fill="#8A9AAE" font-family="sans-serif">FB</text>
+            <text x="215" y="92" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">3-4m wide</text>
+            <!-- Curved press run -->
+            <path d="M 65 160 Q 110 90 128 72" fill="none" stroke="#D4561A" stroke-width="2.2" marker-end="url(#wed-cp1)"/>
+            <text x="72" y="112" font-size="8" fill="#D4561A" font-family="sans-serif" transform="rotate(-52,72,112)">curve run</text>
+            <!-- Pass lane being cut -->
+            <line x1="138" y1="65" x2="208" y2="63" stroke="#8A9AAE" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#wed-cp2)" opacity="0.6"/>
+            <text x="172" y="57" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">pass lane cut off</text>
+            <text x="163" y="73" font-size="13" fill="#D4561A" font-family="sans-serif" opacity="0.8">✕</text>
+            <!-- Jog back -->
+            <path d="M 122 72 Q 85 118 66 158" fill="none" stroke="#8A9AAE" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#wed-cp2)" opacity="0.5"/>
+            <text x="80" y="130" font-size="7" fill="#8A9AAE" font-family="sans-serif">jog back</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>curved press</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#8A9AAE"></div>pass lane / jog back</div>
+          </div>
+        </div>
         <div class="cues"><span class="cue orange">Full effort every rep</span><span class="cue">Curve not straight</span><span class="cue">Body sideways on arrival</span><span class="cue">Full recovery before next rep</span></div>
       </div>
       <div class="drill">
@@ -626,25 +688,52 @@ Alternate between these two variations across weeks.</div>
 <div class="session-panel" id="sess-fri">
   <div class="session-head">
     <div><div class="session-title">Friday — Recovery Touch</div><div class="session-focus">Low intensity · maintain connection with the ball · no load</div></div>
-    <div class="session-meta"><div class="session-time">20min</div><div class="session-location">La Gloria · Warehouse</div></div>
+    <div class="session-meta"><div class="session-time">25min</div><div class="session-location">La Gloria · Warehouse</div></div>
   </div>
-  <div class="session-note">Yesterday was your biggest day. Friday is not for working — it's for not losing the thread. If the body is tired, drop to 12 minutes of easy touch. No gym leg days today or tomorrow.</div>
+  <div class="session-note">Yesterday was your biggest day. Friday is not for working — it's for not losing the thread. All four activation elements at easy pace. No gym leg days today or tomorrow.</div>
   <div class="block open">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--muted)"></div>
-      <div class="block-info"><div class="block-name">Easy Touch — Rebounder</div><div class="block-tag">Rebounder only · no sprints</div></div>
-      <div class="block-dur">20min</div><div class="block-chevron">▼</div>
+      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">Easy pace · agility · rebounder · mobility · juggling</div></div>
+      <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Rhythmic Passing and Easy Receiving</div><div class="drill-time">10 min</div></div>
-        <div class="drill-desc">Rebounder, comfortable distance, calm rhythm. Both feet. Shoulder check every reception — even here, even tired. Especially here, especially tired: the habit is built when you don't feel like doing it.</div>
-        <div class="cues"><span class="cue muted">No intensity</span><span class="cue muted">Own rhythm</span><span class="cue">Habit the same</span></div>
+        <div class="drill-row"><div class="drill-name">Agility Ladder</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Easy pace — not speed work today. Two feet in each rung, in-in-out-out, lateral shuffle. Three passes through. Just getting the feet moving.</div>
+        <div class="cues"><span class="cue muted">Easy pace</span><span class="cue">Light on the feet</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Juggling and Control — Free</div><div class="drill-time">10 min</div></div>
-        <div class="drill-desc">No structure. Juggling, chest control, free play. Friday is the day the ball should feel like a friend. Finish whenever you want.</div>
+        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Floor rebounder, calm rhythm, both feet. Shoulder check every reception. The habit is the point, not the work.</div>
+        <div class="cues"><span class="cue muted">Own rhythm</span><span class="cue">Scan every rep</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Leg swings, hip circles, lateral shuffle. Easy and deliberate — keep the range of motion without loading the legs.</div>
+        <div class="cues"><span class="cue muted">No load</span><span class="cue">Full range</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Juggling</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Both feet, thighs, chest — free. Friday juggling should feel like play. Finish whenever you want.</div>
         <div class="cues"><span class="cue muted">No obligation</span><span class="cue muted">Enjoy it</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--muted)"></div>
+      <div class="block-info"><div class="block-name">Angled Rebounder — Improvised Control</div><div class="block-tag">Awkward heights · strange angles · wrestle it down</div></div>
+      <div class="block-dur">10min</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Angled Rebounder — Varied Heights and Angles</div><div class="drill-time">10 min</div></div>
+        <div class="drill-desc">This is different from the floor rebounder work. Set the rebounder at different angles so the ball comes back at unpredictable heights — knee-high, chest-high, bouncing awkwardly, skimming the floor. Your job is to control it by whatever means necessary and bring it under your foot.<br><br>
+No fixed technique. Chest, thigh, instep, outside of foot, header if needed. The point is not to receive it cleanly — it's to never lose it. This is where the juggling skill and the real-match ball handling overlap.<br><br>
+Vary the angle of the rebounder every few minutes. Let it surprise you. This is the closest solo training gets to the bad passes you'll receive in a match.</div>
+        <div class="drill-setup"><strong>Setup:</strong> Angled rebounder. Change the angle every 2-3 minutes. Start further away (5-6m), move closer (3m) for the trickier bounces. No target cones — just you and the ball.</div>
+        <div class="cues"><span class="cue">Never lose the ball</span><span class="cue">Any body part</span><span class="cue">Change the angle</span><span class="cue muted">No perfect technique required</span></div>
       </div>
     </div>
   </div>
@@ -662,12 +751,27 @@ Alternate between these two variations across weeks.</div>
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
       <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">Jog + touch on real surface · 8 minutes</div></div>
-      <div class="block-dur">8min</div><div class="block-chevron">▼</div>
+      <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Jog + Touch in Motion</div><div class="drill-time">8 min</div></div>
-        <div class="drill-desc">Easy jog around the pitch, ball at feet. Feel the surface — the irregular bounces, the short grass. Dynamic mobility mixed in: leg swings, hip circles. No structure, just getting the body ready and the ball familiar on this surface.</div>
+        <div class="drill-row"><div class="drill-name">Jog + Touch in Motion</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Easy jog around the pitch, ball at feet. Feel the surface — the irregular bounces, the short grass. Get the body and the ball familiar with the outdoor surface before anything else.</div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">If you brought the rebounder: floor level, calm rhythm, both feet, shoulder check every reception. If not: self-pass and receive in motion both feet — same habit, no rebounder needed.</div>
+        <div class="cues"><span class="cue">Shoulder check every rep</span><span class="cue">Both feet</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Leg swings forward and back, lateral, hip circles, high knees, heel-to-glutes, lateral shuffle. Hips and adductors open before Block A.</div>
+        <div class="cues"><span class="cue">Full range of motion</span><span class="cue">Hips</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Juggling</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Both feet, thighs, chest — free. Get the touch feel on the outdoor ball before the session starts properly.</div>
+        <div class="cues"><span class="cue muted">Free</span><span class="cue">Both feet</span></div>
       </div>
     </div>
   </div>
@@ -750,11 +854,11 @@ The first touch must keep you moving forward. A touch that stops you dead is a f
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
       <div class="block-info"><div class="block-name">Block B — Reactive Finishing</div><div class="block-tag">Far post · cutback · chaos balls · both sides</div></div>
-      <div class="block-dur">24min</div><div class="block-chevron">▼</div>
+      <div class="block-dur">21min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Far Post Arrival — Both Sides</div><div class="drill-time">8 min</div></div>
+        <div class="drill-row"><div class="drill-name">Far Post Arrival — Both Sides</div><div class="drill-time">7 min</div></div>
         <div class="drill-desc">Angled rebounder simulates the cross. Start from an intermediate position, hold your run, arrive at the far post just as the ball does. Timing — not pace — is the skill. 4 minutes with rebounder on the left, 4 minutes on the right. Reset cones between sides.</div>
         <div class="diagram">
           <svg viewBox="0 0 280 190" style="max-width:280px;width:100%">
@@ -783,13 +887,13 @@ The first touch must keep you moving forward. A touch that stops you dead is a f
         <div class="cues"><span class="cue">Hold the run</span><span class="cue">Arrive late not early</span><span class="cue">Both sides equally</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Cutback to Penalty Spot — Both Sides</div><div class="drill-time">8 min</div></div>
+        <div class="drill-row"><div class="drill-name">Cutback to Penalty Spot — Both Sides</div><div class="drill-time">7 min</div></div>
         <div class="drill-desc">Rebounder angled to simulate a low ball pulled back to the penalty spot. You arrive at the penalty spot, one-touch finish. 4 minutes with the cutback coming from the left, 4 minutes from the right.<br><br>
 Rotate finishes across reps: strong foot inside, strong foot outside, weak foot inside, across the keeper. Pick a corner every time — no vague finishing.</div>
         <div class="cues"><span class="cue">Arrive at penalty spot</span><span class="cue">One touch</span><span class="cue">Both sides</span><span class="cue">Pick a corner</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Chaos Second Balls — Six-Yard Box</div><div class="drill-time">8 min</div></div>
+        <div class="drill-row"><div class="drill-name">Chaos Second Balls — Six-Yard Box</div><div class="drill-time">7 min</div></div>
         <div class="drill-desc">Send the ball to the angled rebounder at unpredictable heights and angles. Step forward, assume it's coming to you, closer to goal than you expect. No setup, no adjustment — react and finish. Chest, shin, knee, wrong foot — any contact toward goal.<br><br>
 <strong>Mental cue:</strong> The moment you enter the six-yard box — predator brain on. Game-reading brain off.</div>
         <div class="diagram">
@@ -828,21 +932,36 @@ Rotate finishes across reps: strong foot inside, strong foot outside, weak foot 
 <div class="session-panel" id="sess-sun">
   <div class="session-head">
     <div><div class="session-title">Sunday — Deliberate Finishing</div><div class="session-focus">Self-created situations · amagues · clinical precision</div></div>
-    <div class="session-meta"><div class="session-time">40min</div><div class="session-location">La Gloria · Real Goal</div></div>
+    <div class="session-meta"><div class="session-time">60min</div><div class="session-location">La Gloria · Real Goal</div></div>
   </div>
   <div class="session-note">Sunday is the opposite of Saturday. Saturday finishing is reactive — balls come at you unpredictably. Sunday finishing is deliberate — you create the situation, you control the pace, and the standard is clinical precision. Pick a corner every single time. Not vague finishing.</div>
 
   <div class="block open">
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--green)"></div>
-      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">5 minutes · rebounder · easy</div></div>
-      <div class="block-dur">5min</div><div class="block-chevron">▼</div>
+      <div class="block-info"><div class="block-name">Activation</div><div class="block-tag">Agility · rebounder · dynamic mobility · juggling</div></div>
+      <div class="block-dur">12min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">5 min</div></div>
-        <div class="drill-desc">Easy, calm rhythm. Both feet. Shoulder check every reception. Sunday activation is short — the deliberate pace of the finishing blocks does the rest of the warm-up naturally.</div>
+        <div class="drill-row"><div class="drill-name">Agility Ladder</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Two feet in each rung, in-in-out-out, lateral shuffle. Three passes through. Easy pace — Sunday is deliberate, not explosive.</div>
+        <div class="cues"><span class="cue">Light on the feet</span><span class="cue muted">Easy pace</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Rebounder — Both Feet</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Calm rhythm, both feet, shoulder check every reception.</div>
         <div class="cues"><span class="cue">Calm rhythm</span><span class="cue">Both feet</span><span class="cue">Shoulder check</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Dynamic Mobility</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Leg swings, hip circles, high knees, heel-to-glutes, lateral shuffle. Hips and adductors open before the finishing blocks.</div>
+        <div class="cues"><span class="cue">Full range</span><span class="cue">Hips</span></div>
+      </div>
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Juggling</div><div class="drill-time">3 min</div></div>
+        <div class="drill-desc">Both feet, thighs, chest — free. Sunday juggling is the calmest of the week. Gets the touch right before the deliberate finishing work begins.</div>
+        <div class="cues"><span class="cue muted">No obligation</span><span class="cue muted">Easy</span></div>
       </div>
     </div>
   </div>
@@ -851,11 +970,11 @@ Rotate finishes across reps: strong foot inside, strong foot outside, weak foot 
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--sky)"></div>
       <div class="block-info"><div class="block-name">Block A — Self-Pass and Finish</div><div class="block-tag">Both sides · run onto the ball · low and hard</div></div>
-      <div class="block-dur">15min</div><div class="block-chevron">▼</div>
+      <div class="block-dur">20min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Self-Pass into Box — Run On and Finish</div><div class="drill-time">7 min</div></div>
+        <div class="drill-row"><div class="drill-name">Self-Pass into Box — Run On and Finish</div><div class="drill-time">9 min</div></div>
         <div class="drill-desc">Two small cone boxes placed inside the penalty area — one to the left of goal, one to the right, roughly at the edge of the six-yard box. Self-pass into one of them, run onto it, one-touch finish low and hard into the opposite corner. Pick a corner before you pass — not after.<br><br>
 The discipline: your first touch must be a finish. Not a control touch, not a setup touch — a finish. If the ball isn't on target, the rep doesn't count regardless of how clean it felt.</div>
         <div class="drill-setup"><strong>Setup:</strong> Two cone boxes (about 1m square) inside the penalty area, left and right of goal. Alternate which box you play into. Both sides equally.</div>
@@ -895,7 +1014,7 @@ The discipline: your first touch must be a finish. Not a control touch, not a se
         <div class="cues"><span class="cue">Pick a corner before you pass</span><span class="cue">First touch is the finish</span><span class="cue">Low and hard</span><span class="cue orange">Off target = rep doesn't count</span></div>
       </div>
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Ground Ball — Run On and Finish</div><div class="drill-time">8 min</div></div>
+        <div class="drill-row"><div class="drill-name">Ground Ball — Run On and Finish</div><div class="drill-time">11 min</div></div>
         <div class="drill-desc">Roll or kick the ball forward at varying pace and angle, chase it down, control without breaking stride, finish. Simulates the ball that escapes the midfield — the defender is behind you, you have to judge the pace and finish before the keeper closes you down.<br><br>
 Vary the pace and angle across reps: fast ball, dying ball, slight angle left, slight angle right. The first touch must keep you moving forward. A touch that stops you dead is a failed rep.</div>
         <div class="cues"><span class="cue">First touch forward — never dead</span><span class="cue">Judge pace before arriving</span><span class="cue">Finish before fully set</span><span class="cue orange">Stopping dead = failed rep</span></div>
@@ -907,11 +1026,11 @@ Vary the pace and angle across reps: fast ball, dying ball, slight angle left, s
     <div class="block-head" onclick="toggleBlock(this)">
       <div class="block-accent" style="background:var(--orange)"></div>
       <div class="block-info"><div class="block-name">Block B — Create Space, Place It</div><div class="block-tag">Four amagues · rebounder · pick a corner every time</div></div>
-      <div class="block-dur">20min</div><div class="block-chevron">▼</div>
+      <div class="block-dur">25min</div><div class="block-chevron">▼</div>
     </div>
     <div class="block-body">
       <div class="drill">
-        <div class="drill-row"><div class="drill-name">Four Amagues — 4 Minutes Each</div><div class="drill-time">16 min</div></div>
+        <div class="drill-row"><div class="drill-name">Four Amagues — 4 Minutes Each</div><div class="drill-time">20 min</div></div>
         <div class="drill-desc">Receive from the rebounder, execute the amague, feel the yard of space it creates, place it into a corner. Deliberate pace — slow enough to feel what the space gives you, fast enough to be honest. Pick a corner before you receive. Not after.<br><br>
 <strong>Fake shot — 4 min</strong><br>
 Shape to shoot, let the defender commit to blocking it, shift onto the other foot, place it. The fake only works if it's convincing — really shape to shoot.<br><br>
@@ -947,6 +1066,403 @@ Receive with momentum, kill the ball dead, defender overruns, shoot into the spa
   </div>
 </div>
 
+<!-- ── EXTRA WORK ── -->
+<div class="session-panel" id="sess-extra">
+  <div class="session-head">
+    <div><div class="session-title">Extra Work</div><div class="session-focus">Link play setups · pick a setup, pick variants · no fixed order</div></div>
+    <div class="session-meta"><div class="session-time">Open</div><div class="session-location">La Gloria · Warehouse</div></div>
+  </div>
+  <div class="session-note">For days when CEFA or a match is cancelled and you have time. This is a library — not a session. Pick one setup, run a few variants, move on or go deeper. No need to do all five in one day.</div>
+
+  <!-- SETUP 1 -->
+  <div class="block open">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--sky)"></div>
+      <div class="block-info"><div class="block-name">Setup 1 — Three-Option Release</div><div class="block-tag">The foundation · decision before receiving</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">Rebounder 4m ahead. Mini goal (two cones) 3-4m to your left — fullback. Mini goal 3-4m to your right — fullback. Two cones as a gate 6-8m forward, slightly angled — the striker's channel.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 300 210" style="max-width:300px;width:100%">
+            <defs>
+              <marker id="ex1a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex1b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+              <marker id="ex1c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex1d" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+            </defs>
+            <rect x="130" y="10" width="30" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="145" y="23" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">RBD</text>
+            <circle cx="145" cy="105" r="13" fill="#2E8FD4"/>
+            <text x="145" y="109" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">P</text>
+            <line x1="143" y1="92" x2="143" y2="30" stroke="#2E8FD4" stroke-width="1.5" marker-end="url(#ex1a)"/>
+            <line x1="147" y1="30" x2="147" y2="90" stroke="#1C2B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ex1b)"/>
+            <rect x="18" y="94" width="4" height="22" fill="#1E7A3C"/>
+            <rect x="38" y="94" width="4" height="22" fill="#1E7A3C"/>
+            <text x="30" y="88" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">L fullback</text>
+            <rect x="258" y="94" width="4" height="22" fill="#1E7A3C"/>
+            <rect x="278" y="94" width="4" height="22" fill="#1E7A3C"/>
+            <text x="270" y="88" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">R fullback</text>
+            <rect x="128" y="175" width="4" height="20" fill="#D4561A"/>
+            <rect x="158" y="175" width="4" height="20" fill="#D4561A"/>
+            <text x="145" y="205" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">forward channel (wk 3+)</text>
+            <path d="M 133 108 Q 80 108 44 108" fill="none" stroke="#D4561A" stroke-width="2" marker-end="url(#ex1c)"/>
+            <path d="M 157 108 Q 210 108 256 108" fill="none" stroke="#D4561A" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ex1c)" opacity="0.3"/>
+            <path d="M 145 118 Q 145 148 145 173" fill="none" stroke="#1E7A3C" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ex1d)" opacity="0.3"/>
+            <text x="145" y="148" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">turn first</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>fullback goals</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>forward channel</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1C2B4A"></div>return ball</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Two options only</strong> — left and right fullback. Get the decision automatic before adding the third.<br><br>
+          <strong>b. Three options</strong> — add the forward channel. Requires a turn before releasing through the gate.<br><br>
+          <strong>c. Weak foot only</strong> — every release, no exceptions. Strong foot not allowed.<br><br>
+          <strong>d. One touch maximum</strong> — decision made before the ball arrives. If you need two touches, the scan wasn't good enough.<br><br>
+          <strong>e. Pre-decision calling</strong> — call "left", "right", or "through" out loud before passing to the rebounder. Then execute immediately.<br><br>
+          <strong>f. Fast tempo + calling</strong> — fastest sustainable tempo while maintaining quality. Call it, receive it, release it.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP 2 -->
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--green)"></div>
+      <div class="block-info"><div class="block-name">Setup 2 — Triangle Receiving</div><div class="block-tag">Two cones + rebounder · the cone is a defender · use it</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">Two cones and one rebounder forming a triangle. Rebounder at the top, one cone bottom-left, one cone bottom-right — roughly 4-5m between each. You collect near one cone, do something with the ball using that cone as a defender, then release off the rebounder and collect near the other cone. Back and forth.<br><br>The cone is not a gate to pass through. It's a defender to beat, use, or shield against. The touch before the release is where the work happens.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 260 220" style="max-width:260px;width:100%">
+            <defs>
+              <marker id="ex2a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex2b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex2c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+            </defs>
+            <!-- Rebounder top centre -->
+            <rect x="110" y="18" width="40" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="31" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">RBD</text>
+            <!-- Left cone -->
+            <polygon points="48,168 56,185 40,185" fill="#D4561A"/>
+            <text x="48" y="198" text-anchor="middle" font-size="8" fill="#D4561A" font-family="sans-serif">cone L</text>
+            <text x="48" y="208" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">(defender)</text>
+            <!-- Right cone -->
+            <polygon points="212,168 220,185 204,185" fill="#D4561A"/>
+            <text x="212" y="198" text-anchor="middle" font-size="8" fill="#D4561A" font-family="sans-serif">cone R</text>
+            <text x="212" y="208" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">(defender)</text>
+            <!-- Triangle lines (faint) -->
+            <line x1="48" y1="168" x2="130" y2="36" stroke="#E8DFC8" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="212" y1="168" x2="130" y2="36" stroke="#E8DFC8" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="48" y1="168" x2="212" y2="168" stroke="#E8DFC8" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Player near left cone -->
+            <circle cx="68" cy="155" r="11" fill="#2E8FD4"/>
+            <text x="68" y="159" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">P</text>
+            <!-- Touch to beat cone -->
+            <path d="M 74 148 Q 95 120 118 40" fill="none" stroke="#2E8FD4" stroke-width="2" marker-end="url(#ex2a)"/>
+            <text x="112" y="105" font-size="7" fill="#2E8FD4" font-family="sans-serif">release</text>
+            <!-- Return from RBD -->
+            <path d="M 142" y1="36" x2="200" y2="162" fill="none" stroke="#1C2B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ex2c)"/>
+            <text x="182" y="108" font-size="7" fill="#8A9AAE" font-family="sans-serif">collect R</text>
+            <!-- Touch near right cone -->
+            <text x="30" y="140" font-size="7" fill="#D4561A" font-family="sans-serif">touch beats</text>
+            <text x="30" y="150" font-size="7" fill="#D4561A" font-family="sans-serif">the cone</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#2E8FD4"></div>collect + release</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>cone = defender</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1C2B4A"></div>return from rebounder</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Outside to inside</strong> — collect outside the cone, one touch cutting inside past it, release from inside. The touch takes you away from the defender.<br><br>
+          <strong>b. Inside to outside</strong> — collect inside the cone, one touch rolling outside, release from outside. The opposite direction.<br><br>
+          <strong>c. Sole roll behind the cone</strong> — collect, drag the ball behind the cone with the sole, release from the other side. Slow and deliberate — feel the defender being taken out of the equation.<br><br>
+          <strong>d. Shoulder drop</strong> — collect, drop the shoulder one way, shift the ball the other, release. Same as the match movement: the shoulder drop creates the half-yard, the release uses it.<br><br>
+          <strong>e. Fake and go</strong> — collect, feign a pass one direction, release the other. The cone is the defender reading the fake.<br><br>
+          <strong>f. One touch release</strong> — no touch before the release. Collect and release in one motion, using the angle of arrival to beat the cone without an extra touch. The hardest variant — the body shape on collection has to do all the work.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP 3 -->
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--orange)"></div>
+      <div class="block-info"><div class="block-name">Setup 3 — Two Rebounders</div><div class="block-tag">Drop · recycle · receive · the full second striker sequence</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">Two rebounders facing each other, you in the middle. Rebounder A behind you (5-6m) — the midfielder. Rebounder B in front of you (8-10m) — the ball played forward or in behind.<br><br>
+The base sequence: drop back toward A → receive half-turned → lay off back to A → spin and run toward B → receive from B in stride. This is the full second striker movement in one continuous flow: drop to link, recycle, run to arrive.<br><br>
+The timing is the whole exercise. The layoff to A and the run toward B have to happen as one motion — release and go simultaneously. If you pause between the layoff and the run, the moment is gone. In a match the CB has already recovered by then.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 260 250" style="max-width:260px;width:100%">
+            <defs>
+              <marker id="ex3a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex3b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex3c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+              <marker id="ex3d" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+            </defs>
+            <!-- RBD B — forward -->
+            <rect x="110" y="15" width="40" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="28" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">RBD B</text>
+            <text x="130" y="42" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">forward / in behind</text>
+            <!-- RBD A — behind -->
+            <rect x="110" y="210" width="40" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="223" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif">RBD A</text>
+            <text x="130" y="238" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">midfielder</text>
+            <!-- Player start -->
+            <circle cx="130" cy="130" r="12" fill="#2E8FD4"/>
+            <text x="130" y="134" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">P</text>
+            <!-- ① drop to A -->
+            <path d="M 136 142 Q 138 175 138 208" fill="none" stroke="#2E8FD4" stroke-width="1.8" marker-end="url(#ex3a)"/>
+            <text x="144" y="178" font-size="7" fill="#2E8FD4" font-family="sans-serif">① drop</text>
+            <!-- Return from A -->
+            <line x1="122" y1="208" x2="122" y2="144" stroke="#1C2B4A" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#ex3d)"/>
+            <text x="84" y="178" font-size="7" fill="#8A9AAE" font-family="sans-serif">② receive</text>
+            <!-- ③ layoff back to A -->
+            <path d="M 124 142 Q 108 175 112 208" fill="none" stroke="#D4561A" stroke-width="1.5" marker-end="url(#ex3b)"/>
+            <text x="55" y="160" font-size="7" fill="#D4561A" font-family="sans-serif">③ layoff</text>
+            <!-- ④ spin and run to B -->
+            <path d="M 136 118 Q 175 80 138 35" fill="none" stroke="#D4561A" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#ex3b)"/>
+            <text x="178" y="80" font-size="7" fill="#D4561A" font-family="sans-serif">④ spin</text>
+            <text x="178" y="89" font-size="7" fill="#D4561A" font-family="sans-serif">+ run</text>
+            <!-- ⑤ receive from B -->
+            <path d="M 118 33" x2="118" y2="118" fill="none" stroke="#1E7A3C" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#ex3c)" opacity="0.8"/>
+            <text x="58" y="80" font-size="7" fill="#1E7A3C" font-family="sans-serif">⑤ receive</text>
+            <text x="58" y="89" font-size="7" fill="#1E7A3C" font-family="sans-serif">in stride</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#2E8FD4"></div>① drop to receive</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>③ layoff · ④ spin and run</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>⑤ receive in stride</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Base sequence</strong> — drop, receive half-turned, layoff, spin, receive from B. Get the timing fluid before adding anything.<br><br>
+          <strong>b. Half-turn filter</strong> — receive from A already half-turned, and instead of laying off back to A, filter a pass directly to B in one touch. You become the link — drop, receive, filter forward immediately. No spin needed, just the quality of the first touch and the body shape.<br><br>
+          <strong>c. Check and cut</strong> — instead of a straight drop toward A, check toward A then cut left or right before receiving. A's return ball finds you already moving sideways, half-turned. Then the layoff and spin sequence continues as normal. Face one rebounder for a set, then turn and face the other — each direction trains a different cutting side.<br><br>
+          <strong>d. Vary the spin direction</strong> — in the base sequence, sometimes spin left after the layoff, sometimes right. The direction should feel like it's reading which side B's ball is coming to.<br><br>
+          <strong>e. One-touch layoff</strong> — the recycle back to A must be one touch. First touch has to be already oriented for the layoff.<br><br>
+          <strong>f. Receive from B and finish</strong> — the full sequence ends with a finish on goal after receiving from B. Drop → recycle → spin → receive → finish.<br><br>
+          <strong>g. Third-man combination</strong> — the ball goes through both rebounders before finding you. Drop to A → layoff to A → A returns to you → you lay off to B → B plays you in behind → receive in stride. You're not making the final pass — you're arriving at the end of it. The timing gap between your layoff to B and B's return is the run. Go as soon as the ball leaves your foot.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP 4 -->
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--sky)"></div>
+      <div class="block-info"><div class="block-name">Setup 4 — Release and Move</div><div class="block-tag">Rebounder + secondary target · don't stand still after the pass</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">Rebounder 4m ahead. One target gate (two cones) 5-6m to the left or right. One target gate 5-6m forward. Receive from the rebounder, release to a gate — then immediately move to a second position and receive again. The point: every pass is followed by movement. You never stand and watch.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 280 220" style="max-width:280px;width:100%">
+            <defs>
+              <marker id="ex4a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex4b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex4c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+              <marker id="ex4d" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+            </defs>
+            <rect x="115" y="12" width="30" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="25" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">RBD</text>
+            <circle cx="130" cy="100" r="12" fill="#2E8FD4"/>
+            <text x="130" y="104" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">P</text>
+            <!-- Pass to RBD -->
+            <line x1="128" y1="88" x2="128" y2="32" stroke="#2E8FD4" stroke-width="1.5" marker-end="url(#ex4a)"/>
+            <line x1="132" y1="32" x2="132" y2="86" stroke="#1C2B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ex4d)"/>
+            <!-- Gate left -->
+            <rect x="22" y="88" width="4" height="20" fill="#D4561A"/>
+            <rect x="42" y="88" width="4" height="20" fill="#D4561A"/>
+            <text x="33" y="80" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">gate L</text>
+            <!-- Release left -->
+            <path d="M 118 103 Q 78 103 46 103" fill="none" stroke="#D4561A" stroke-width="2" marker-end="url(#ex4b)"/>
+            <text x="80" y="96" font-size="7" fill="#D4561A" font-family="sans-serif">① release</text>
+            <!-- Gate forward -->
+            <rect x="118" y="170" width="4" height="20" fill="#1E7A3C"/>
+            <rect x="148" y="170" width="4" height="20" fill="#1E7A3C"/>
+            <text x="133" y="164" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">gate fwd</text>
+            <!-- Move to new position -->
+            <path d="M 125 112 Q 100 145 122 168" fill="none" stroke="#8A9AAE" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#ex4c)"/>
+            <text x="90" y="148" font-size="7" fill="#8A9AAE" font-family="sans-serif">② move</text>
+            <text x="148" y="205" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">③ receive again</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>① release to gate</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#8A9AAE"></div>② immediate movement</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>③ receive in new position</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Release left, move forward</strong> — the basic sequence. Simple two-action combination.<br><br>
+          <strong>b. Release forward, move wide</strong> — reverse the direction. Release through the forward gate, move wide to a cone, receive again.<br><br>
+          <strong>c. Vary release + movement randomly</strong> — no fixed pattern. Decide during the receiving touch where you're going next.<br><br>
+          <strong>d. One touch release</strong> — every release one touch. Forces the decision to happen before the ball arrives.<br><br>
+          <strong>e. Weak foot release</strong> — any direction, weak foot only.<br><br>
+          <strong>f. Add finish</strong> — after the move to the second position, instead of receiving again, receive and finish on goal. Sequence: receive → release → move → receive → finish.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP 5 -->
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--green)"></div>
+      <div class="block-info"><div class="block-name">Setup 5 — Cone Gates Only</div><div class="block-tag">No rebounder · self-created momentum · Phase 3 preparation</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">No rebounder. Three or four cone gates spread across a 15×15m area — each gate is two cones 1.5m apart. You self-pass into space, run onto the ball, pass through the first gate, move immediately to the next gate, self-pass, receive again, pass through. The ball is always moving. You are always moving. Nothing stands still.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 280 240" style="max-width:280px;width:100%">
+            <defs>
+              <marker id="ex5a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex5b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex5c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+            </defs>
+            <!-- Gate 1 -->
+            <rect x="30" y="185" width="4" height="18" fill="#D4561A"/>
+            <rect x="50" y="185" width="4" height="18" fill="#D4561A"/>
+            <text x="42" y="178" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">gate 1</text>
+            <!-- Gate 2 -->
+            <rect x="120" y="105" width="4" height="18" fill="#D4561A"/>
+            <rect x="140" y="105" width="4" height="18" fill="#D4561A"/>
+            <text x="132" y="98" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">gate 2</text>
+            <!-- Gate 3 -->
+            <rect x="215" y="55" width="4" height="18" fill="#D4561A"/>
+            <rect x="235" y="55" width="4" height="18" fill="#D4561A"/>
+            <text x="228" y="48" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">gate 3</text>
+            <!-- Gate 4 -->
+            <rect x="30" y="35" width="4" height="18" fill="#D4561A"/>
+            <rect x="50" y="35" width="4" height="18" fill="#D4561A"/>
+            <text x="42" y="28" text-anchor="middle" font-size="7" fill="#D4561A" font-family="sans-serif">gate 4</text>
+            <!-- Player start -->
+            <circle cx="42" cy="215" r="10" fill="#2E8FD4" opacity="0.3" stroke="#2E8FD4" stroke-width="1.5"/>
+            <text x="42" y="219" text-anchor="middle" font-size="8" fill="#2E8FD4" font-family="sans-serif">P</text>
+            <!-- Self pass through gate 1 -->
+            <path d="M 42 204 Q 80 160 122 118" fill="none" stroke="#2E8FD4" stroke-width="1.8" marker-end="url(#ex5a)"/>
+            <text x="62" y="178" font-size="7" fill="#2E8FD4" font-family="sans-serif" transform="rotate(-42,62,178)">self-pass</text>
+            <!-- Through gate 2 to gate 3 -->
+            <path d="M 140 115 Q 185 90 217 68" fill="none" stroke="#D4561A" stroke-width="1.8" marker-end="url(#ex5b)"/>
+            <!-- Gate 3 to gate 4 -->
+            <path d="M 217 64 Q 140 50 52 44" fill="none" stroke="#1E7A3C" stroke-width="1.8" marker-end="url(#ex5c)"/>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#2E8FD4"></div>self-pass + run</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>through gate</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>continue sequence</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Fixed route</strong> — always gate 1 → 2 → 3 → 4. Learn the footwork before adding decisions.<br><br>
+          <strong>b. Random route</strong> — no fixed order. Decide the next gate as you're passing through the current one.<br><br>
+          <strong>c. Weak foot through every gate</strong> — every pass through a gate is weak foot only.<br><br>
+          <strong>d. One touch through gate</strong> — receive the self-pass, one touch through the gate. No extra touch to settle.<br><br>
+          <strong>e. Add a turn</strong> — before passing through one gate per circuit, stop, do a back-to-goal turn (any of the four exits), then continue. Mixes the link play movement with the turning work.<br><br>
+          <strong>f. Add a finish</strong> — the final gate each circuit leads to a finish on goal. Full sequence ends with a shot.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SETUP 6 -->
+  <div class="block">
+    <div class="block-head" onclick="toggleBlock(this)">
+      <div class="block-accent" style="background:var(--navy)"></div>
+      <div class="block-info"><div class="block-name">Setup 6 — Back-to-Goal Link Play</div><div class="block-tag">Receive under pressure · hold · release to different targets</div></div>
+      <div class="block-dur">—</div><div class="block-chevron">▼</div>
+    </div>
+    <div class="block-body">
+      <div class="drill">
+        <div class="drill-row"><div class="drill-name">Setup</div></div>
+        <div class="drill-desc">Rebounder in front of you, back fully to goal. Defender cone 1m behind you — tight. Two target cones: one to your left (left fullback), one to your right (right fullback). Optional third target: a gate 6-8m to one side simulating the channel ball for your striker partner.<br><br>
+The skill here is the first touch. Not shielding, not holding — the quality of where you put the ball with your first contact. Back-to-goal with a defender tight behind you, a heavy touch directly to your feet gets the ball taken. The right touch moves the ball just enough away from the defender to create the half-yard you need to release cleanly. Too little and they're in it. Too much and you've lost control.<br><br>
+The defender cone makes every touch honest. If the cone could reach the ball after your first touch, the rep doesn't count.</div>
+        <div class="diagram">
+          <svg viewBox="0 0 260 230" style="max-width:260px;width:100%">
+            <defs>
+              <marker id="ex6a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#2E8FD4"/></marker>
+              <marker id="ex6b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#D4561A"/></marker>
+              <marker id="ex6c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1C2B4A"/></marker>
+              <marker id="ex6d" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0,7 3.5,0 7" fill="#1E7A3C"/></marker>
+            </defs>
+            <!-- Rebounder top — midfielder -->
+            <rect x="110" y="15" width="40" height="18" rx="3" fill="#1C2B4A" opacity="0.85"/>
+            <text x="130" y="28" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">RBD</text>
+            <text x="130" y="42" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">midfielder</text>
+            <!-- Player -->
+            <circle cx="130" cy="108" r="13" fill="#2E8FD4"/>
+            <text x="130" y="112" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif">P</text>
+            <!-- Defender cone behind -->
+            <polygon points="130,138 138,155 122,155" fill="#D4561A"/>
+            <text x="130" y="168" text-anchor="middle" font-size="8" fill="#D4561A" font-family="sans-serif">DEF</text>
+            <text x="130" y="178" text-anchor="middle" font-size="7" fill="#8A9AAE" font-family="sans-serif">tight behind</text>
+            <!-- Return ball from RBD -->
+            <line x1="132" y1="33" x2="132" y2="93" stroke="#1C2B4A" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ex6c)"/>
+            <!-- Left target -->
+            <rect x="18" y="96" width="4" height="20" fill="#1E7A3C"/>
+            <rect x="38" y="96" width="4" height="20" fill="#1E7A3C"/>
+            <text x="30" y="88" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">L target</text>
+            <!-- Right target -->
+            <rect x="218" y="96" width="4" height="20" fill="#1E7A3C"/>
+            <rect x="238" y="96" width="4" height="20" fill="#1E7A3C"/>
+            <text x="230" y="88" text-anchor="middle" font-size="7" fill="#1E7A3C" font-family="sans-serif">R target</text>
+            <!-- Release left -->
+            <path d="M 117 108 Q 75 108 42 108" fill="none" stroke="#D4561A" stroke-width="2" marker-end="url(#ex6b)"/>
+            <!-- Release right faint -->
+            <path d="M 143 108 Q 185 108 216 108" fill="none" stroke="#D4561A" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#ex6b)" opacity="0.3"/>
+            <text x="72" y="100" font-size="7" fill="#D4561A" font-family="sans-serif">release</text>
+            <!-- Shield indicator -->
+            <text x="100" y="72" font-size="7" fill="#8A9AAE" font-family="sans-serif">body between</text>
+            <text x="100" y="81" font-size="7" fill="#8A9AAE" font-family="sans-serif">ball + DEF</text>
+          </svg>
+          <div class="diag-legend">
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1C2B4A"></div>ball from midfielder</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#D4561A"></div>defender tight behind</div>
+            <div class="diag-legend-item"><div class="diag-swatch" style="background:#1E7A3C"></div>release targets</div>
+          </div>
+        </div>
+        <div class="drill-row" style="margin-top:14px"><div class="drill-name">Variants</div></div>
+        <div class="drill-desc">
+          <strong>a. Touch left, release left</strong> — first touch moves the ball away from the defender to the left, layoff follows naturally. Get the direction of the touch and the release aligned first.<br><br>
+          <strong>b. Touch right, release right</strong> — same, other side.<br><br>
+          <strong>c. Touch away from defender, release opposite</strong> — first touch creates space to the left, but you release right. The touch is a fake — you move the ball one way, the defender shifts weight, you release the other. Hardest variant. Closest to a match situation.<br><br>
+          <strong>d. Vary touch weight</strong> — same setup, but consciously experiment with how heavy the touch is. Heavy touch = more space but less control. Light touch = more control but defender stays in it. Find the range where you have both.<br><br>
+          <strong>e. One-touch layoff</strong> — no touch before the release. Receive and lay off in one contact. The angle of arrival has to create the separation instead of the touch. Forces very deliberate body shape on reception.<br><br>
+          <strong>f. Receive, turn, release</strong> — same setup but the first touch sets up a turn rather than a layoff. Touch away from the defender, spin, release forward. The defender cone makes every turn slower and more honest than Tuesday Block A.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- ASSESSMENT -->
 <div class="assessment">
   <div class="assessment-tag">Self-Assessment · Every Two Weeks · After the 8v8</div>
@@ -968,7 +1484,7 @@ function showSession(day) {
   document.querySelectorAll('.snav-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.day-chip').forEach(c => c.classList.remove('active'));
   document.getElementById('sess-' + day).classList.add('active');
-  const days = ['mon','tue','wed','thu','fri','sat','sun'];
+  const days = ['mon','tue','wed','thu','fri','sat','sun','extra'];
   const idx = days.indexOf(day);
   document.querySelectorAll('.snav-btn')[idx].classList.add('active');
   document.querySelectorAll('.day-chip')[idx].classList.add('active');
